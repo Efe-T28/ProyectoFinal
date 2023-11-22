@@ -1,0 +1,5 @@
+La Paz;Valledupar;02:20;2020-09-10;6;18000
+Valledupar;Bosconia;12:26;2000-11-23;12;23000
+Gracia;Brasil;07:10;2023-10-08;13;3500000.0
+
+
