@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicesar.igproyecto.VentanaAdminController">
+   <children>
+      <HBox layoutY="-3.0" prefHeight="641.0" prefWidth="887.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="641.0" prefWidth="254.0" spacing="30.0" style="-fx-background-color: BCA694;">
+               <children>
+                  <Separator prefWidth="200.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+                  <ImageView fitHeight="253.0" fitWidth="248.0" pickOnBounds="true">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../../images/avatar-de-usuario-con-marca-de-verificacion.png" />
+                     </image>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </ImageView>
+                  <Separator prefWidth="200.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+                  <Button fx:id="btAgregar" mnemonicParsing="false" onAction="#clickBotonAgregar" text="Agregar Ruta">
+                     <effect>
+                        <SepiaTone level="0.5">
+                           <input>
+                              <DropShadow />
+                           </input>
+                        </SepiaTone>
+                     </effect>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btEliminar" mnemonicParsing="false" onAction="#clickBotonEliminar" text="Eliminar Ruta">
+                     <effect>
+                        <SepiaTone level="0.5">
+                           <input>
+                              <DropShadow />
+                           </input>
+                        </SepiaTone>
+                     </effect>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btSalir" mnemonicParsing="false" onAction="#clickBotonSalir" text="Salir">
+                     <effect>
+                        <SepiaTone level="0.5">
+                           <input>
+                              <DropShadow />
+                           </input>
+                        </SepiaTone>
+                     </effect>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Separator prefWidth="200.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+               </children>
+            </VBox>
+            <BorderPane prefHeight="641.0" prefWidth="650.0">
+               <top>
+                  <HBox alignment="CENTER" prefHeight="133.0" prefWidth="632.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="65.0" text="Origen:">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbboxBusOrigen" prefHeight="30.0" prefWidth="180.0">
+                           <effect>
+                              <SepiaTone level="0.13" />
+                           </effect>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Label prefHeight="20.0" prefWidth="68.0" text="Destino:">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbboxBusDestino" prefHeight="30.0" prefWidth="180.0">
+                           <effect>
+                              <SepiaTone level="0.13" />
+                           </effect>
+                        </ComboBox>
+                        <Label />
+                        <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#clickBotonBuscar" prefHeight="28.0" prefWidth="83.0" text="Buscar">
+                           <effect>
+                              <SepiaTone level="0.13" />
+                           </effect>
+                           <HBox.margin>
+                              <Insets left="90.0" right="5.0" top="60.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children></HBox>
+               </top>
+               <center>
+                  <TableView fx:id="tablaRutas" prefHeight="508.0" prefWidth="639.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="columnaOrigen" prefWidth="100.0" text="Origen" />
+                        <TableColumn fx:id="columnaDestino" prefWidth="100.0" text="Destino" />
+                        <TableColumn fx:id="columnaHora" prefWidth="120.0" text="Hora de salida" />
+                        <TableColumn fx:id="columnaFechaSalida" prefWidth="120.0" text="Fecha de salida" />
+                        <TableColumn fx:id="columnaPrecio" prefWidth="100.0" text="Precio" />
+                        <TableColumn fx:id="columnaCodigo" prefWidth="100.0" text="Codigo" />
+                    </columns>
+                     <effect>
+                        <SepiaTone level="0.13" />
+                     </effect>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
